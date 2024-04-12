@@ -1,0 +1,223 @@
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body
+{
+    overflow: hidden;
+    width: 100%;
+    min-height: 100vh;
+    /* background: black; */
+}
+
+.webgl
+{
+    position: fixed;
+    /* top: 0; */
+    /* left: 0; */
+    outline: none;
+}
+
+.container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 33.3333%;
+    height: 100vh;
+    /* background: rgba(37, 3, 81, 0.635); */
+    overflow: hidden;
+    pointer-events: none;
+
+}
+
+.container-1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-1 .box {
+    transform-style: preserve-3d;
+    animation: animateBox 20s linear infinite;
+}
+
+@keyframes animateBox {
+    0% {
+        transform: perspective(1000px) rotateX(0deg) rotate(15deg);
+    }
+
+    100% {
+        transform: perspective(1000px) rotateX(360deg) rotate(15deg);
+    }
+}
+
+.container-1 .box span {
+    font-family: Astrolab, sans-serif;
+    position: absolute;
+    color: rgb(185, 185, 185);
+    font-size: 1.5em;
+    white-space: nowrap;
+    padding: 0 10px;
+    transform-style: preserve-3d;
+    text-shadow: 0 5px 15px rgba(0, 0, 0, 0.25);
+    /* horizontal verticle blur color */
+    transform: translate(-50%, -50%) rotateX(calc(var(--i) * 22.5deg)) translateZ(500px);
+    /* letter-spacing: 10px; */
+    background: linear-gradient(90deg, transparent, rgba(30, 1, 1, 0.356), transparent);
+    line-height: 1em;
+    letter-spacing: 6px;
+
+}
+
+.container-1 .box span i:nth-child(1) {
+    font-style: initial;
+    color: rgb(169, 53, 53);
+}
+
+.container-1 .box span i:nth-child(2) {
+    font-style: initial;
+    color: rgb(61, 53, 169);
+}
+
+.container-1 .box span i:nth-child(3) {
+    font-style: initial;
+    color: rgb(61, 53, 169);
+}
+
+
+
+.container-2 {
+    left: 33.3333%;
+    background: rgba(0, 0, 0, 0.446);
+}
+
+.container-2 .section {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    /* overflow: hidden; */
+}
+
+.container-2 .section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* background: radial-gradient(transparent, transparent,
+    #0005, #0004); */
+    z-index: 10000;
+    pointer-events: none;
+}
+
+.container-2 .scroll {
+    width: calc(100% + 400px);
+    left: -400px;
+    display: flex;
+    color: #eee;
+    box-shadow: 0 15px 10px rgba(0, 0, 0, 0.5);
+    transform: rotate(calc(var(--d) * 1deg)) translateY(calc(var(--y) * 1px));
+}
+
+.container-2 .scroll div {
+    background: rgb(169, 53, 53);
+    color: #1d1104;
+    font-family: Astrolab, sans-serif;
+    font-size: 2em;
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+    animation: animateScrollDiv1 60s linear infinite;
+    animation-delay: -60s;
+}
+
+
+.container-2 .scroll:nth-child(2) div {
+    background: rgb(61, 53, 169);
+}
+
+.container-2 .scroll:nth-child(3) div {
+    background: rgb(169, 53, 53);
+}
+
+.container-2 .scroll div:nth-child(2) {
+    animation: animateScrollDiv2 60s linear infinite;
+    animation-delay: -30s;
+}
+
+@keyframes animateScrollDiv1 {
+   0% {
+    transform: translateX(100%);
+   }
+   100% {
+    transform: translateX(-100%);
+   } 
+}
+
+@keyframes animateScrollDiv2 {
+   0% {
+    transform: translateX(0);
+   }
+   100% {
+    transform: translateX(-200%);
+   } 
+}
+
+
+.container-3 {
+    left: 66.666666%;
+    /* background: rgba(255, 234, 0, 0.74); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-3 .box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.container-3 .box h2 {
+    font-size: 2em;
+    font-family: Astrolab, sans-serif;
+    -webkit-text-stroke: 1px rgb(169, 53, 53);
+    color: transparent;
+    text-transform: uppercase;
+    line-height: 2em;
+    letter-spacing: 0.1em;
+    animation: animateContainer3h2 4s linear infinite;
+    animation-delay: calc(var(--i) * 0.25s);
+}
+
+@keyframes animateContainer3h2 {
+    0%,10% {
+        color: rgb(169, 53, 53);
+        filter: hue-rotate(0deg) brightness(1);
+    }
+    10.0000001% {
+        color: transparent;
+    }
+    100% {
+        color: transparent;
+        filter: hue-rotate(360deg) brightness(0);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
