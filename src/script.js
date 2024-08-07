@@ -22,7 +22,7 @@ import { mergeBufferGeometries } from 'three/examples/jsm/utils/BufferGeometryUt
 // Debug
 const gui = new dat.GUI({ width: 340 })
 // gui.closed = true
-gui.hide()
+// gui.hide()
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl')
